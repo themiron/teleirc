@@ -353,7 +353,7 @@ exports.parseMsg = function(msg, myUser, tg, callback) {
     }
 
     var prefix = '';
-    if (!config.soloUse) {
+    if (!(config.soloUse || msg.chat.type === 'private')) {
         prefix = '<' + exports.getName(msg.from, config) + '> ';
     }
 
