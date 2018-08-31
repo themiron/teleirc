@@ -49,6 +49,13 @@ var init = function(msgCallback) {
             nodeIrc.raw.apply(nodeIrc, cmd.split(' '));
         });
         config.channels.forEach(function(channel) {
+            var ircChanJoinDelay = channel.ircChanJoinDelay;
+            if (ircChanJoinDelay > 0) {
+                setTimeout(function() {
+                    nodeIrc.join(channel.ircChan, channel.chanPwd);
+                }, ircChanJoinDelay*1000);
+                return;
+            }
             nodeIrc.join(channel.ircChan, channel.chanPwd);
         });
     });

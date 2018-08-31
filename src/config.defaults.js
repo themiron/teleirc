@@ -133,6 +133,7 @@ config.channels = [
         ircChan: '#channel3',
         ircChanReadOnly: true,          // if true, irc can not send to telegram
         ircChanOverrideReadOnly: false, // if true, override readonly by highlighting the bot
+        ircChanJoinDelay: 10,           // delay for 10 seconds before joining the channel
         tgGroup: 'Tg_Group_3',
         tgGroupReadOnly: true,          // if true, telegram can not send to irc
         tgGroupOverrideReadOnly: true,  // if true, override readonly by highlighting the bot
